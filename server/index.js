@@ -1,5 +1,5 @@
 require('dotenv').config();
-require('./database');
+const { mongoose } = require('./database');
 
 const express = require('express'),
     morgan = require('morgan'),
