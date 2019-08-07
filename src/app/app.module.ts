@@ -9,6 +9,7 @@ import { ProductsComponent } from './components/products/products.component';
 import { ServicesComponent} from './components/services/services.component';
 import { UsersComponent} from './components/users/users.component';
 import { ClientsComponent} from './components/clients/clients.component';
+import { RolesComponent} from './components/roles/roles.component';
 import { RouteModule } from './route/route.component';
 
 
