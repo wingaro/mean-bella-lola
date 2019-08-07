@@ -9,4 +9,4 @@ const ClientsSchema  = new Schema({
     e_mail: { type: String, require: true },
 });
 
-module.exports = mongoose.model('User', ClientsSchema);
+module.exports = mongoose.model('Client', ClientsSchema);
