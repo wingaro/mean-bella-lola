@@ -15,6 +15,7 @@ const app = express();
 app.set('port', process.env.PORT || 3000);
 
 //Middlewares
+app.use(bodyParser.json());
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(cors());
