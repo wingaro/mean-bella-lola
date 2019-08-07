@@ -1,3 +1,15 @@
+.backgroundNavbar {
+    background-color: #ffffff!important;
+    transition: background-color .5s;
+   }
+   
+   .customNavbar{
+       width: 100%;
+       height: auto;
+       position: relative;
+       font-family: 'Titan One', cursive;
+   }
+
 .innerNavbar {
     width: 100%;
     height: auto;
