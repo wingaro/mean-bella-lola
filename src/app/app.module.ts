@@ -20,7 +20,7 @@ import { RouteModule } from './route/route.component';
     ProductsComponent,
     ServicesComponent,
     ClientsComponent,
-    //UsersComponent
+    UsersComponent
   ],
   imports: [
     BrowserModule,
