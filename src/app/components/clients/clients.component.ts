@@ -14,7 +14,7 @@ declare var M: any;
 })
 export class ClientsComponent implements OnInit {
 
-  constructor(private clientService: ClientService) { }
+  constructor(public clientService: ClientService) { }
 
   ngOnInit() {
     this.getClients();

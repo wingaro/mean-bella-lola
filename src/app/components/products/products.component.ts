@@ -13,7 +13,7 @@ declare var M: any;
 })
 export class ProductsComponent implements OnInit {
 
-  constructor(private productService: ProductService) { }
+  constructor(public productService: ProductService) { }
 
   ngOnInit() {
     this.getProducts();
