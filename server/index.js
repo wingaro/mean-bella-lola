@@ -1,12 +1,13 @@
 require('dotenv').config();
 require('./database');
 
-const express = require('express');
-const morgan = require('morgan');
-const cors = require('cors'),
+const express = require('express'),
+    morgan = require('morgan'),
+    cors = require('cors'),
     path = require('path'),
     bodyParser = require('body-parser'),
     passport = require('passport');
+    
 const app = express();
 
 
