@@ -12,6 +12,7 @@ import { ClientsComponent} from './components/clients/clients.component';
 import { RolesComponent} from './components/roles/roles.component';
 import { RouteModule } from './route/route.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { IndexComponent } from './components/index/index.component';
 
 
 
@@ -23,7 +24,8 @@ import { MenuComponent } from './components/menu/menu.component';
     ClientsComponent,
     UsersComponent,
     RolesComponent,
-    MenuComponent
+    MenuComponent,
+    IndexComponent
   ],
   imports: [
     BrowserModule,
