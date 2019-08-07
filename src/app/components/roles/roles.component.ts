@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 import { RolService } from '../../services/rol.service';
 import {NgForm} from '@angular/forms';
-import { ProviderAst } from '@angular/compiler';
 import { Rol } from 'src/app/models/rol';
 
 declare var M: any;

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'; 
 import { Rol } from '../models/rol';
-import {RolesComponent } from '../components/roles/roles.component';
+import { RolesComponent } from '../components/roles/roles.component';
 
 @Injectable({
   providedIn: 'root'
