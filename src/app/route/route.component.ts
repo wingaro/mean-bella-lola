@@ -9,11 +9,13 @@ import { ServicesComponent } from '../components/services/services.component';
 import { UsersComponent } from '../components/users/users.component';
 import { ClientsComponent } from '../components/clients/clients.component';
 import { RolesComponent } from '../components/roles/roles.component';
+import { MenuComponent } from '../components/menu/menu.component';
 import { Route } from '@angular/compiler/src/core';
 
 
 const routes: Routes = [
     {path:'home', component: AppComponent},
+    {path:'menu', component: MenuComponent},
     {path: 'products', component: ProductsComponent},
     {path: 'services', component: ServicesComponent},
     {path: 'users', component: UsersComponent},
