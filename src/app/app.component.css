@@ -1,0 +1,32 @@
+/*INICIO*/
+.carousel {
+    height: 600px !important;
+      }
+    
+    .carousel .indicators .indicator-item {
+    height: 16px !important;
+    width: 16px !important;
+    background-color: #ff6e40ad !important;
+    }
+    
+    .text-inicio p {
+    font-family: 'Wendy One', sans-serif;
+    font-size: 2rem;
+    color: #000000 !important;
+    }
+    
+    .text-inicio h3{
+      font-family: 'Titan One', cursive;
+      color: #000000;
+    }
+    
+    .deep-orange.accent-2 {
+        background-color: #ff6e40 !important;
+        font-family: 'Bungee', cursive;
+    }
+    
+    .img-tam{
+          max-width: 50% !important;
+    }
+    
+    
