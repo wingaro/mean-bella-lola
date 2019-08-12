@@ -16,9 +16,7 @@ import { Route } from '@angular/compiler/src/core';
 
 
 const routes: Routes = [
-    {path:'home', component: IndexComponent},
-    {path:'menu', component: MenuComponent},
-    {path:'index', component: MenuComponent},
+    {path:'home', component: AppComponent},
     {path: 'products', component: ProductsComponent},
     {path: 'services', component: ServicesComponent},
     {path: 'users', component: UsersComponent},
