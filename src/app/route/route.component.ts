@@ -9,6 +9,7 @@ import { ServicesComponent } from '../components/services/services.component';
 import { UsersComponent } from '../components/users/users.component';
 import { ClientsComponent } from '../components/clients/clients.component';
 import { RolesComponent } from '../components/roles/roles.component';
+import { NavcrudsComponent } from '../components/navcruds/navcruds.component';
 import { Route } from '@angular/compiler/src/core';
 
 
@@ -20,6 +21,7 @@ const routes: Routes = [
     {path: 'users', component: UsersComponent},
     {path: 'clients', component: ClientsComponent},
     {path: 'roles', component: RolesComponent},
+    {path: 'navcruds', component: NavcrudsComponent},
 
 ]
 
