@@ -1,5 +1,5 @@
 .backgroundNavbar {
-    background-color: #ff6e40!important;
+    background-color: #ffffff!important;
     transition: background-color .5s;
    }
    
@@ -13,7 +13,7 @@
    .innerNavbar {
        width: 100%;
        height: auto;
-       background-color: #ffffffcc;
+       background-color: #ff6e40;
        z-index: 999;
        padding: 0;
        transition: all .5s;
