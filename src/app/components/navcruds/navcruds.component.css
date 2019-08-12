@@ -93,7 +93,7 @@
    }
    
    .navbarOptions ul li a:hover {
-       color: #ff6e40 ;
+       color: #ffffff ;
        font-weight: 700;
    }
    
@@ -220,7 +220,7 @@
    .borderTop {
        width: 5%;
        height: 50%;
-       background-color: #ff6e40;
+       background-color: #ffffff;
        position: absolute;
        top: 0;
        right: 0;
