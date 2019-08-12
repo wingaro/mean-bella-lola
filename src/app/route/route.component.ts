@@ -19,12 +19,9 @@ const routes: Routes = [
     {path: 'services', component: ServicesComponent},
     {path: 'users', component: UsersComponent},
     {path: 'clients', component: ClientsComponent},
-    {path: 'roles', component: RolesComponent}
-
- 
+    {path: 'roles', component: RolesComponent},
 
 ]
-
 
 @NgModule({
     declarations: [],
