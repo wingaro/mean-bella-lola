@@ -10,11 +10,7 @@ import { ServicesComponent} from './components/services/services.component';
 import { UsersComponent} from './components/users/users.component';
 import { ClientsComponent} from './components/clients/clients.component';
 import { RolesComponent} from './components/roles/roles.component';
-import { MenuComponent } from './components/menu/menu.component';
-import { IndexComponent } from './components/index/index.component';
-
 import { RouteModule } from './route/route.component';
-
 
 
 @NgModule({
@@ -24,9 +20,7 @@ import { RouteModule } from './route/route.component';
     ServicesComponent,
     ClientsComponent,
     UsersComponent,
-    RolesComponent,
-    MenuComponent,
-    IndexComponent
+    RolesComponent
   ],
   imports: [
     BrowserModule,
