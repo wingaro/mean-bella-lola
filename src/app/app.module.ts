@@ -10,9 +10,12 @@ import { ServicesComponent} from './components/services/services.component';
 import { UsersComponent} from './components/users/users.component';
 import { ClientsComponent} from './components/clients/clients.component';
 import { RolesComponent} from './components/roles/roles.component';
-import { RouteModule } from './route/route.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { IndexComponent } from './components/index/index.component';
+import { NosotrosComponent } from './components/nosotros/nosotros.component';
+import { FooterComponent } from './components/footer/footer.component';
+
+import { RouteModule } from './route/route.component';
 
 
 
@@ -25,7 +28,9 @@ import { IndexComponent } from './components/index/index.component';
     UsersComponent,
     RolesComponent,
     MenuComponent,
-    IndexComponent
+    IndexComponent,
+    NosotrosComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
