@@ -18,41 +18,5 @@
 
       <!-- Compiled and minified JavaScript -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-      <script type="text/javascript">
-      $(".button-collapse").sideNav({
-           closeOnClick: true,
-           draggable: false,
-           onOpen: function(el) {
-              console.log("Opened");
-              $(".side-nav li").fadeIn();
-              $(".logo-sideNav a img").fadeIn();
-              $(".exitBtn").fadeIn();
-           },
-          onClose: function(el) {
-              console.log("Closed");
-              $(".side-nav li").fadeOut();
-              $(".logo-sideNav a img").fadeOut();
-              $(".exitBtn").fadeOut();
-          }
-      });
-      window.onload = function() {
-         //Animate loader
-         $("body").css("overflow","hidden");
-  
-         $(".loaderFirst").animate({width: 0}, 200,"swing",function () {
-             $(".loaderSecond").animate({width: 0}, 200,"swing",function () {
-                 $(".loaderThird").animate({width: 0}, 200,"swing",function () {
-                     $(".loaderFourth").animate({width: 0}, 200,"swing",function () {
-                         $(".loaderFifth").animate({width: 0}, 200,"swing",function () {
-                             $(".loaderIndex").fadeOut();
-                             $("body").css("overflow","auto");
-                             scrolly();
-                         });
-                     });
-                 });
-             });
-         });
-       }
-      </script>
 </body>
 </html>
