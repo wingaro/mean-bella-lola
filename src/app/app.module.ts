@@ -12,8 +12,9 @@ import { ClientsComponent} from './components/clients/clients.component';
 import { RolesComponent} from './components/roles/roles.component';
 import { NavcrudsComponent } from './components/navcruds/navcruds.component';
 import { RouteModule } from './route/route.component';
-import { HomeComponent } from './components/home/home.component';
-
+import { NavpagesComponent } from './components/navpages/navpages.component';
+import { IndexComponent } from './components/index/index.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -25,7 +26,11 @@ import { HomeComponent } from './components/home/home.component';
     UsersComponent,
     RolesComponent,
     NavcrudsComponent,
-    HomeComponent
+    NavpagesComponent,
+    IndexComponent,
+    FooterComponent
+
+   
   ],
   imports: [
     BrowserModule,
