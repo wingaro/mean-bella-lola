@@ -12,6 +12,7 @@ import { ClientsComponent} from './components/clients/clients.component';
 import { RolesComponent} from './components/roles/roles.component';
 import { NavcrudsComponent } from './components/navcruds/navcruds.component';
 import { RouteModule } from './route/route.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 
@@ -23,7 +24,8 @@ import { RouteModule } from './route/route.component';
     ClientsComponent,
     UsersComponent,
     RolesComponent,
-    NavcrudsComponent
+    NavcrudsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

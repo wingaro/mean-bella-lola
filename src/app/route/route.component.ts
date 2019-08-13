@@ -10,6 +10,7 @@ import { UsersComponent } from '../components/users/users.component';
 import { ClientsComponent } from '../components/clients/clients.component';
 import { RolesComponent } from '../components/roles/roles.component';
 import { NavcrudsComponent } from '../components/navcruds/navcruds.component';
+import { HomeComponent } from '../components/home/home.component';
 import { Route } from '@angular/compiler/src/core';
 
 
@@ -22,6 +23,7 @@ const routes: Routes = [
     {path: 'clients', component: ClientsComponent},
     {path: 'roles', component: RolesComponent},
     {path: 'navcruds', component: NavcrudsComponent},
+    {path: 'home', component: HomeComponent},
 
 ]
 
