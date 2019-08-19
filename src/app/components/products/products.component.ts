@@ -15,45 +15,52 @@ export class ProductsComponent implements OnInit {
 
   constructor(public productService: ProductService) { }
 
+  filename: File;
+
   ngOnInit() {
-    this.getProducts();
+    this.get();
   }
 
-  addProduct(form: NgForm){
+  cargarImagen(image : any){
+    this.filename = image.target.files[0];
+   }
+ 
+
+  add(form: NgForm){
     if(form.value._id) {
-      this.productService.putProduct(form.value)
+      this.productService.put(form.value, this.filename)
       .subscribe(res =>{
         this.resetForm(form);
         M.toast({html: 'Updated Successfuly!'})     
-        this.getProducts();
+        this.get();
       })
     }else{
-      this.productService.postProduct(form.value)
+      this.productService.post(form.value, this.filename)
       .subscribe(res =>{
         this.resetForm(form);
         M.toast({html: 'Save Successfuly!'})     
-        this.getProducts();
+        this.get();
       });  
     }
   }
 
-  getProducts(){
-    this.productService.getProducts()
+  get(){
+    this.productService.get()
     .subscribe(res => {
     this.productService.products = res as Product[];
     console.log(res);
     });
   }
 
-  editProduct(product: Product){
+  edit(product: Product){
     this.productService.selectedProduct = product;
   }
 
-  deleteProduct(_id: string){
+  delete(_id: string){
     if(confirm('Are you sure you want to delete it?')) {
-      this.productService.deleteProduct(_id)
+      this.productService.delete(_id)
       .subscribe(res => {
-        this.getProducts();
+        this.get();
         M.toast({html: 'Deleted successfully'});
       });  
     }

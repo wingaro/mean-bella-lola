@@ -15,46 +15,51 @@ declare var M: any;
 export class ServicesComponent implements OnInit {
 
   constructor(public serviceService: ServiceService) { }
+  filename: File;
 
   ngOnInit() {
-    this.getServices();
+    this.get();
   }
 
-  addService(form: NgForm){
+  cargarImagen(image : any){
+    this.filename = image.target.files[0];
+   }
+
+  add(form: NgForm){
     if(form.value._id) {
-      this.serviceService.putService(form.value)
+      this.serviceService.put(form.value, this.filename)
       .subscribe(res =>{
         this.resetForm(form);
         M.toast({html: 'Updated Successfuly!'})     
-        this.getServices();
+        this.get();
       })
     }else{
-      this.serviceService.postService(form.value)
+      this.serviceService.post(form.value, this.filename)
       .subscribe(res =>{
         this.resetForm(form);
         M.toast({html: 'Save Successfuly!'})     
-        this.getServices();
+        this.get();
       });  
     }
   }
 
-  getServices(){
-    this.serviceService.getServices()
+  get(){
+    this.serviceService.get()
     .subscribe(res => {
     this.serviceService.services = res as Service[];
     console.log(res);
     });
   }
 
-  editService(service: Service){
+  edit(service: Service){
     this.serviceService.selectedService = service;
   }
 
-  deleteService(_id: string){
+  delete(_id: string){
     if(confirm('Are you sure you want to delete it?')) {
-      this.serviceService.deleteService(_id)
+      this.serviceService.delete(_id)
       .subscribe(res => {
-        this.getServices();
+        this.get();
         M.toast({html: 'Deleted successfully'});
       });  
     }

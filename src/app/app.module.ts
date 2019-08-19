@@ -31,6 +31,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NosotrosComponent } from './components/nosotros/nosotros.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PublicidadComponent } from './components/publicidad/publicidad.component';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     UserComponent,
     SignUpComponent,
     UserProfileComponent,
-    SignInComponent
+    SignInComponent,
+    PublicidadComponent
   ],
   imports: [
     BrowserModule,

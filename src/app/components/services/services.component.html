@@ -4,28 +4,30 @@
     <div class="col s5">
       <div class="card">
         <div class="card-content">
-          <form #serviceForm="ngForm" (ngSubmit)="addService(serviceForm)">
+          <form #serviceForm="ngForm" (ngSubmit)="add(serviceForm)">
             <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]= "serviceService.selectedService._id">
             <div class="row">
               <div class="imput-field col s12">
-                <input type="text" name="paquete" #paquete="ngModel" 
-                [(ngModel)] = "serviceService.selectedService.paquete"
+                <input type="text" name="title" #title="ngModel" 
+                [(ngModel)] = "serviceService.selectedService.title"
                 placeholder="Ingresar Paquete">
               </div>
               <div class="imput-field col s12">
-                <input type="number" name="cantidad" #cantidad="ngModel" 
-                [(ngModel)] = "serviceService.selectedService.cantidad"
-                placeholder="Cantidad de Personas">
+                <input type="text" name="descripcion" #descripcion="ngModel" 
+                [(ngModel)] = "serviceService.selectedService.descripcion"
+                placeholder="Descripcion del paquete">
               </div>
               <div class="imput-field col s12">
-                <input type="date" name="date" #date="ngModel" 
-                [(ngModel)] = "serviceService.selectedService.date"
-                placeholder="Fecha">
+                <input type="text" name="precio" #precio="ngModel" 
+                [(ngModel)] = "serviceService.selectedService.precio"
+                placeholder="precio">
               </div>
-              <div class="imput-field col s12">
-                <input type="text" name="direction" #direction="ngModel" 
-                [(ngModel)] = "serviceService.selectedService.direction"
-                placeholder="Dirección">
+              <div class="col-4">
+                  <div class="input-field col s12">
+                    <label for="">Imagen</label>
+                    <input type="file"  name="filename"
+                    (change)="cargarImagen($event)">
+                  </div>
               </div>
               <div class="card-action">
                 <div class="input-fiel col s12">
@@ -41,22 +43,23 @@
     <div class="col s7">
       <table>
         <thead>
-          <th>Paquete</th>
-          <th>Personas</th>
-          <th>Fecha</th>
-          <th>Direccion</th>
+          <th>Title</th>
+          <th>Descripcion</th>
+          <th>precio</th>
+          <th>Imagen</th>
+          <th>Operaciones</th>
         </thead>
         <tbody>
           <tr *ngFor="let service of serviceService.services">
-              <td> {{ service.paquete }}</td>
-              <td> {{ service.cantidad }}</td>
-              <td> {{ service.date }}</td>
-              <td> {{ service.direction }}</td>
+              <td> {{ service.title }}</td>
+              <td> {{ service.descripcion }}</td>
+              <td> {{ service.precio }}</td>
+              <td><img width="50px" height="70px" src="http://localhost:3000/api/services/img/{{service.filename}}" alt=""></td>
               <td>
-                <a (click)="editService(service)">
+                <a (click)="edit(service)">
                   <i class="material-icons">edit</i>
                 </a>
-                <a (click)="deleteService(service._id)">
+                <a (click)="delete(service._id)">
                     <i class="material-icons">delete</i>
                   </a>
               </td>

@@ -12,10 +12,10 @@ export class RolService {
   roles: Rol[];
 
    //URL LOCAL
-  // readonly URL_API = 'http://localhost:3000/api/roles';
+ readonly URL_API = 'http://localhost:3000/api/roles';
 
   //URL HEROKU
-  readonly URL_API = '/api/roles';
+// readonly URL_API = '/api/roles';
 
   constructor(public http: HttpClient ) {
     this.selectedRol = new Rol();

@@ -4,23 +4,46 @@
     <div class="col s5">
       <div class="card">
         <div class="card-content">
-          <form #productForm="ngForm" (ngSubmit)="addProduct(productForm)">
+          <form #productForm="ngForm" (ngSubmit)="add(productForm)">
             <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]= "productService.selectedProduct._id">
             <div class="row">
-              <div class="imput-field col s12">
-                <input type="text" name="name" #name="ngModel" 
-                [(ngModel)] = "productService.selectedProduct.name"
-                placeholder="Nombre del Producto">
+              <div class="input-field col s12">
+                <input type="text" name="codigo" #codigo="ngModel" 
+                [(ngModel)] = "productService.selectedProduct.codigo"
+                placeholder="Ingresar codigo">
               </div>
-              <div class="imput-field col s12">
-                <input type="text" name="description" #description="ngModel" 
-                [(ngModel)] = "productService.selectedProduct.description"
-                placeholder="Descipción del Producto">
+              <div class="input-field col s12">
+                <input type="text" name="title" #title="ngModel" 
+                [(ngModel)] = "productService.selectedProduct.title"
+                placeholder="Ingresa el nombre del Producto">
               </div>
-              <div class="imput-field col s12">
-                <input type="number" name="precio" #precio="ngModel" 
-                [(ngModel)] = "productService.selectedProduct.precio"
-                placeholder="Precio">
+              <div class="input-field col s12">
+                <input type="text" name="descripcion" #descripcion="ngModel" 
+                [(ngModel)]= "productService.selectedProduct.descripcion"
+                placeholder="Descripcion del Producto">
+              </div>
+              <div class="input-field col s12">
+                <label for=""></label>
+                  <select class="browser-default"
+                  name="categoria" #categoria="ngModel"
+                  [(ngModel)]="productService.selectedProduct.categoria">
+                    <option value="" selected>Seleccione la categoria</option>
+                    <option value="Helados">Helados</option>
+                    <option value="Cafes">Cafes</option>
+                    <option value="Marquesitas">Marquesitas</option>
+                  </select>
+              </div>
+              <div class="input-field col s12">
+                  <input type="number" name="precio" #precio="ngModel" 
+                  [(ngModel)] ="productService.selectedProduct.precio"
+                  placeholder="Precio del Producto">
+              </div>
+              <div class="col-4">
+                  <div class="input-field col s12">
+                    <label for="">Imagen</label>
+                    <input type="file"  name="filename"
+                    (change)="cargarImagen($event)">
+                  </div>
               </div>
               <div class="card-action">
                 <div class="input-fiel col s12">
@@ -36,20 +59,27 @@
     <div class="col s7">
       <table>
         <thead>
+          <th>Codigo</th>
           <th>Producto</th>
-          <th>Descripción</th>
+          <th>descripcion</th>
+          <th>Categoria</th>
           <th>Precio</th>
+          <th>Imagen</th>
+          <th>Operaciones</th>
         </thead>
         <tbody>
           <tr *ngFor="let product of productService.products">
-              <td> {{ product.name }}</td>
-              <td> {{ product.description }}</td>
+              <td> {{ product.codigo }}</td>
+              <td> {{ product.title }}</td>
+              <td> {{ product.descripcion }}</td>
+              <td> {{ product.categoria }}</td>
               <td> {{ product.precio }}</td>
+              <td><img width="50px" height="70px" src="http://localhost:3000/api/products/imagen/{{product.filename}}" alt=""></td>
               <td>
-                <a (click)="editProduct(product)">
+                <a (click)="edit(product)">
                   <i class="material-icons">edit</i>
                 </a>
-                <a (click)="deleteProduct(product._id)">
+                <a (click)="delete(product._id)">
                     <i class="material-icons">delete</i>
                   </a>
               </td>

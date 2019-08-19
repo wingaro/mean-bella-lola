@@ -17,7 +17,7 @@
                 [(ngModel)] = "userService.selectedUser.last_name"
                 placeholder="Enter your Last Name">
               </div>
-              <div class="imput-field col s12">
+              <!-- <div class="imput-field col s12">
                 <input type="text" name="address" #address="ngModel" 
                 [(ngModel)] = "userService.selectedUser.address"
                 placeholder="Enter your Address">
@@ -26,17 +26,22 @@
                 <input type="text" name="phone" #phone="ngModel" 
                 [(ngModel)] = "userService.selectedUser.phone"
                 placeholder="Enter your Phone">
-              </div>
+              </div> -->
               <div class="imput-field col s12">
-                <input type="text" name="e_mail" #e_mail="ngModel" 
+                <input type="text" name="email" #email="ngModel" 
                 [(ngModel)] = "userService.selectedUser.email"
                 placeholder="Enter your E-mail">
               </div>
-              <div class="imput-field col s12">
+              <!-- <div class="imput-field col s12">
                 <input type="text" name="perfil" #perfil="ngModel" 
                 [(ngModel)] = "userService.selectedUser.perfil"
                 placeholder="Enter your Perfil">
-              </div>
+              </div> -->
+              <div class="imput-field col s12">
+                  <input type="password" name="password" #password="ngModel" 
+                  [(ngModel)] = "userService.selectedUser.password"
+                  placeholder="Enter your password">
+                </div>
               <div class="card-action">
                 <div class="input-fiel col s12">
                   <button class="btn orange">Save</button>
@@ -53,19 +58,21 @@
         <thead>
           <th>First Name</th>
           <th>Last Name</th>
-          <th>Adress</th>
-          <th>Phone</th>
+          <!-- <th>Adress</th>
+          <th>Phone</th> -->
           <th>E-mail</th>
-          <th>Perfil</th>
+          <th>Password</th>
+          <!-- <th>Perfil</th> -->
           <th>Operaciones</th>
         <tbody>
           <tr *ngFor="let user of userService.users">
               <td> {{ user.first_name }}</td>
               <td> {{ user.last_name }}</td>
-              <td> {{ user.address }}</td>
-              <td> {{ user.phone }}</td>
-              <td> {{ user.e_mail }}</td>
-              <td> {{ user.perfil }}</td>
+              <!-- <td> {{ user.address }}</td>
+              <td> {{ user.phone }}</td> -->
+              <td> {{ user.email }}</td>
+              <!-- <td> {{ user.perfil }}</td> -->
+              <td> {{ user.password }}</td>
               <td>
                 <a (click)="editUser(user)">
                   <i class="material-icons">edit</i>

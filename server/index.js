@@ -9,6 +9,9 @@ const cors = require('cors');
 const passport = require('passport');
 const path = require('path');
 const morgan = require('morgan');
+const multer = require('multer');
+const uuid = require('uuid/v4');
+const { format } = require('timeago.js');
 
 const rtsIndex = require('./routes/index.router');
 
@@ -40,12 +43,32 @@ app.get('/',(req, res) => {
     res.sendFile(path.join(__dirname, '/dist/mean-bellalola/server/index.js'));
 });
 
+app.use(express.urlencoded({limit: '10mb', extended: true}));
+const storage = multer.diskStorage({
+    destination: path.join(__dirname, 'uploads/productos'),
+    filename: (req, file, cb, filename) => {
+        console.log(file);
+        cb(null, uuid() + path.extname(file.originalname));
+    }
+});
+app.use(multer({storage}).single('filename'));
+
+// Global variables
+app.use((req, res, next) => {
+    app.locals.format = format;
+    next();
+});
+app.use(express.static(path.join(__dirname, 'uploads')));
+
 //Routes
 app.use(process.env.URL_PRODUCT ,require('./routes/product.routes'));
 app.use(process.env.URL_SERVICE ,require('./routes/service.routes'));
 app.use(process.env.URL_USER ,require('./routes/user.routes'));
 app.use(process.env.URL_CLIENT ,require('./routes/client.routes'));
 app.use(process.env.URL_ROL ,require('./routes/rol.routes'));
+app.use(process.env.URL_INDEX ,require('./routes/index.router'));
+app.use(process.env.URL_PUBLICIDAD ,require('./routes/publicidad.routes'));
+
 
 //Starting the server
 app.listen(process.env.PORT, () => console.log('server started in', process.env.PORT));

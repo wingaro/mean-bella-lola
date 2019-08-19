@@ -21,6 +21,7 @@ import { SignUpComponent } from '../components/user/sign-up/sign-up.component';
 import { SignInComponent } from '../components/user/sign-in/sign-in.component';
 import { UserProfileComponent } from '../components/user-profile/user-profile.component';
 import { AuthGuard } from '../auth/auth.guard';
+import { PublicidadComponent } from '../components/publicidad/publicidad.component';
 
 
 
@@ -35,6 +36,7 @@ const routes: Routes = [
     {path: 'index', component: IndexComponent},
     {path: 'footer', component: FooterComponent},
     {path: 'nosotros', component: NosotrosComponent},
+    {path: 'publicidad', component: PublicidadComponent},
     {path: 'contacto', component: ContactoComponent},
     {path: 'login', component: UserComponent,
     children: [{ path: '', component: SignInComponent }]},

@@ -2,20 +2,17 @@ const { Router } = require('express');
 const path = require('path');
 const { unlink } = require('fs-extra');
 const router = Router();
-const Product = require('../models/product')
+const Image = require('../models/publicidad')
 
 router.get('/', async (req, res) => {
-    const products = await Product.find();
-    res.json(products);
+    const images = await Image.find();
+    res.json(images);
 });
 
 router.post('/', async (req, res) => {
-    const product = new Product({
-        codigo: req.body.codigo,
+    const image = new Image({
         title: req.body.title,
         descripcion: req.body.descripcion,
-        categoria: req.body.categoria,
-        precio: req.body.precio,
         filename: req.file.filename,
         path: '/productos/' + req.file.filename,
         originalname: req.file.originalname,
@@ -23,24 +20,21 @@ router.post('/', async (req, res) => {
         size: req.file.size
     });
 
-    await product.save();
+    await image.save();
     res.json({
         'status': 'Producto Saved'
     });
 });
 router.get('/:id', async (req, res) => {
-    const product = await Product.findById(req.params.id);
-    res.json(product);
+    const image = await Image.findById(req.params.id);
+    res.json(image);
 });
 
 router.put('/:id', async (req, res) => {
     const { id } = req.params;
-    const product = {
-        codigo: req.body.codigo,
+    const image = {
         title: req.body.title,
         descripcion: req.body.descripcion,
-        categoria: req.body.categoria,
-        precio: req.body.precio,
         filename: req.file.filename,
         path: '/productos/' + req.file.filename,
         originalname: req.file.originalname,
@@ -48,17 +42,17 @@ router.put('/:id', async (req, res) => {
         size: req.file.size
     };
 
-    await Product.findByIdAndUpdate(id, { $set: product }, { new: true });
-    res.json({ status: 'Producto Updated' });
+    await Image.findByIdAndUpdate(id, { $set: image }, { new: true });
+    res.json({ status: 'Image Updated' });
 });
 
 router.delete('/:id', async (req, res) => {
-    const product = await Product.findByIdAndDelete(req.params.id);
-    await unlink(path.resolve('./server/uploads/' + product.path));
-    res.json({ status: 'Producto Deleted' });
+    const image = await Image.findByIdAndDelete(req.params.id);
+    await unlink(path.resolve('./server/uploads/' + image.path));
+    res.json({ status: 'Image Deleted' });
 });
 
-router.get('/imagen/:filename', async (req, res) => {
+router.get('/image/:filename', async (req, res) => {
     const ruta = path.join(__dirname, '../uploads/productos/', req.params.filename);
 
     return res.sendFile(ruta);
