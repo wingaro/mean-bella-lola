@@ -66,7 +66,7 @@ app.use(process.env.URL_SERVICE ,require('./routes/service.routes'));
 app.use(process.env.URL_USER ,require('./routes/user.routes'));
 app.use(process.env.URL_CLIENT ,require('./routes/client.routes'));
 app.use(process.env.URL_ROL ,require('./routes/rol.routes'));
-app.use(process.env.URL_INDEX ,require('./routes/index.routes'));
+app.use(process.env.URL_INDEX ,require('./routes/index.router'));
 app.use(process.env.URL_PUBLICIDAD ,require('./routes/publicidad.routes'));
 
 
