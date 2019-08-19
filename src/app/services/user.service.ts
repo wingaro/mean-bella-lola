@@ -26,11 +26,11 @@ export class UserService {
   
   //URL LOCAL
   //readonly URL_API = 'http://localhost:3000/api/users';
+  // readonly URL_APIC = 'http://localhost:3000/api';
 
   //URL HEROKU
   readonly URL_API = '/api/users';
-  readonly URL_APIC = 'http://localhost:3000/api';
-
+  readonly URL_APIC = '/api';
   constructor(public http: HttpClient) { 
     this.selectedUser = new User();
   }
