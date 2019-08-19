@@ -18,10 +18,10 @@ export class PublicidadService {
   publicidad: Publicidad[];
 
   //URL LOCAL
-  readonly URL_API = 'http://localhost:3000/api/publicidad';
+  // readonly URL_API = 'http://localhost:3000/api/publicidad';
 
   //URL HEROKU
-  // readonly URL_API = '/api/publicidad';
+  readonly URL_API = '/api/publicidad';
 
   constructor(private http: HttpClient ) {
     this.selectedPublicidad = new Publicidad();

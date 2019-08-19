@@ -18,10 +18,10 @@ export class ServiceService {
   services: Service[];
 
    //URL LOCAL
-  readonly URL_API = 'http://localhost:3000/api/services';
+  // readonly URL_API = 'http://localhost:3000/api/services';
 
   //URL HEROKU
-  //readonly URL_API = '/api/services';
+  readonly URL_API = '/api/services';
 
   constructor(public http: HttpClient ) {
     this.selectedService = new Service();

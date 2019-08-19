@@ -11,10 +11,10 @@ export class ClientService {
   selectedClient: Client;
   clients: Client[];
   //URL LOCAL
-  readonly URL_API = 'http://localhost:3000/api/clients';
+  //readonly URL_API = 'http://localhost:3000/api/clients';
 
   //URL HEROKU
-  // readonly URL_API = '/api/clients';
+   readonly URL_API = '/api/clients';
 
   constructor(public http: HttpClient) { 
     this.selectedClient = new Client();

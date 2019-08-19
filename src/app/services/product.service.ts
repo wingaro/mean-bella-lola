@@ -18,10 +18,10 @@ export class ProductService {
   products: Product[];
   
    //URL LOCAL
-   readonly URL_API = 'http://localhost:3000/api/products';
+   //readonly URL_API = 'http://localhost:3000/api/products';
 
   //URL HEROKU
-  //readonly URL_API = '/api/products';
+  readonly URL_API = '/api/products';
 
   constructor(public http: HttpClient ) {
     this.selectedProduct = new Product();
