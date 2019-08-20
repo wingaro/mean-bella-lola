@@ -33,6 +33,7 @@ import { ContactoComponent } from './components/contacto/contacto.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PublicidadComponent } from './components/publicidad/publicidad.component';
 import { BookComponent } from './components/book/book.component';
+import { BookDetailComponent } from './components/book-detail/book-detail.component';
 
 
 
@@ -55,7 +56,8 @@ import { BookComponent } from './components/book/book.component';
     UserProfileComponent,
     SignInComponent,
     PublicidadComponent,
-    BookComponent
+    BookComponent,
+    BookDetailComponent
   ],
   imports: [
     BrowserModule,
