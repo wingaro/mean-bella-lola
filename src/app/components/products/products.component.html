@@ -41,7 +41,7 @@
               <div class="col-4">
                   <div class="input-field col s12">
                     <label for="">Imagen</label>
-                    <input type="file"  name="filename"
+                    <input type="file"  name="filename" #filename="ngModel" 
                     (change)="cargarImagen($event)">
                   </div>
               </div>
