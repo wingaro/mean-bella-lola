@@ -22,8 +22,7 @@ import { SignInComponent } from '../components/user/sign-in/sign-in.component';
 import { UserProfileComponent } from '../components/user-profile/user-profile.component';
 import { AuthGuard } from '../auth/auth.guard';
 import { PublicidadComponent } from '../components/publicidad/publicidad.component';
-import { BookComponent } from '../components/book/book.component';
-import { BookDetailComponent } from '../components/book-detail/book-detail.component';
+
 
 
 
@@ -40,8 +39,6 @@ const routes: Routes = [
     {path: 'nosotros', component: NosotrosComponent},
     {path: 'publicidad', component: PublicidadComponent},
     {path: 'contacto', component: ContactoComponent},
-    {path: 'book', component: BookComponent},
-    {path: 'book-detail', component: BookDetailComponent},
     {path: 'login', component: UserComponent,
     children: [{ path: '', component: SignInComponent }]},
     {path: 'signup', component: UserComponent, 

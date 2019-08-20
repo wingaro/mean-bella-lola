@@ -1,47 +1,17 @@
 import { NgModule } from '@angular/core';
 
 import {
-    MatMenuModule,
-    MatInputModule,
-    MatPaginatorModule,
-    MatProgressSpinnerModule,
-    MatSortModule,
-    MatTableModule,
-    MatIconModule,
-    MatButtonModule,
-    MatCardModule,
-    MatFormFieldModule,
-    MatToolbarModule
+    MatMenuModule
     
 } from '@angular/material';
 
 @NgModule({
     imports: [
-        MatMenuModule,
-        MatInputModule,
-        MatPaginatorModule,
-        MatProgressSpinnerModule,
-        MatSortModule,
-        MatTableModule,
-        MatIconModule,
-        MatButtonModule,
-        MatCardModule,
-        MatFormFieldModule,
-        MatToolbarModule
+        MatMenuModule
         
     ], 
     exports: [
-        MatMenuModule,
-        MatInputModule,
-        MatPaginatorModule,
-        MatProgressSpinnerModule,
-        MatSortModule,
-        MatTableModule,
-        MatIconModule,
-        MatButtonModule,
-        MatCardModule,
-        MatFormFieldModule,
-        MatToolbarModule
+        MatMenuModule
         
     ]
 })
