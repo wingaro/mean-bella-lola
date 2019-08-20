@@ -32,6 +32,8 @@ import { NosotrosComponent } from './components/nosotros/nosotros.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PublicidadComponent } from './components/publicidad/publicidad.component';
+import { BookComponent } from './components/book/book.component';
+
 
 
 @NgModule({
@@ -52,7 +54,8 @@ import { PublicidadComponent } from './components/publicidad/publicidad.componen
     SignUpComponent,
     UserProfileComponent,
     SignInComponent,
-    PublicidadComponent
+    PublicidadComponent,
+    BookComponent
   ],
   imports: [
     BrowserModule,
