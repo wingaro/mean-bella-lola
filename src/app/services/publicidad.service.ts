@@ -23,7 +23,7 @@ export class PublicidadService {
   //URL HEROKU
   readonly URL_API = '/api/publicidad';
 
-  constructor(private http: HttpClient ) {
+  constructor(public http: HttpClient ) {
     this.selectedPublicidad = new Publicidad();
    }
 
