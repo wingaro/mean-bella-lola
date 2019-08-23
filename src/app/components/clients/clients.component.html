@@ -49,7 +49,9 @@
               <thead>
                 <th>Nombre</th>
                 <th>Apellido</th>
-                <th>Dirección</th>
+                <div *ngIf="!ignore">
+                    <th>Dirección</th>
+                </div>
                 <th>Telefono</th>
                 <th>Correo Electronico</th>
                 <div *ngIf="!ignore">
@@ -59,7 +61,9 @@
                 <tr *ngFor="let client of clientService.clients">
                     <td> {{ client.first_name }}</td>
                     <td> {{ client.last_name }}</td>
-                    <td> {{ client.address }}</td>
+                    <div *ngIf="!ignore">
+                        <td> {{ client.address }}</td>
+                    </div>
                     <td> {{ client.phone }}</td>
                     <td> {{ client.e_mail }}</td>
                     <td> {{ client.perfil }}</td>
