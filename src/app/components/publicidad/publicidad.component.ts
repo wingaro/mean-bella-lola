@@ -27,7 +27,7 @@ export class PublicidadComponent implements OnInit {
  
    addPublicidad(form: NgForm){
      if(form.value._id) {
-       this.publicidadService.put(form.value, this.filename)
+       this.publicidadService.putPublicidad(form.value, this.filename)
        .subscribe(res =>{
          this.resetForm(form);
          M.toast({html: 'Updated Successfuly!'})     
@@ -44,7 +44,7 @@ export class PublicidadComponent implements OnInit {
    }
  
    getPublicidad(){
-     this.publicidadService.get()
+     this.publicidadService.getPublicidad()
      .subscribe(res => {
      this.publicidadService.publicidad = res as Publicidad[];
      console.log(res);
@@ -57,7 +57,7 @@ export class PublicidadComponent implements OnInit {
  
    deletePublicidad(_id: string){
      if(confirm('Are you sure you want to delete it?')) {
-       this.publicidadService.delete(_id)
+       this.publicidadService.deletePublicidad(_id)
        .subscribe(res => {
          this.getPublicidad();
          M.toast({html: 'Deleted successfully'});

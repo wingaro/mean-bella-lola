@@ -32,6 +32,9 @@ import { NosotrosComponent } from './components/nosotros/nosotros.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PublicidadComponent } from './components/publicidad/publicidad.component';
+import { SuppliesComponent } from './components/supplies/supplies.component';
+import { InventoriesComponent } from './components/inventories/inventories.component';
+import {FilterPipe } from './pipes/filter.pipe';
 
 
 
@@ -53,7 +56,10 @@ import { PublicidadComponent } from './components/publicidad/publicidad.componen
     SignUpComponent,
     UserProfileComponent,
     SignInComponent,
-    PublicidadComponent
+    PublicidadComponent,
+    SuppliesComponent,
+    InventoriesComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

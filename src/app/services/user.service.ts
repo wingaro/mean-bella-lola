@@ -25,7 +25,7 @@ export class UserService {
    
   
   //URL LOCAL
-  //readonly URL_API = 'http://localhost:3000/api/users';
+  // readonly URL_API = 'http://localhost:3000/api/users';
   // readonly URL_APIC = 'http://localhost:3000/api';
 
   //URL HEROKU

@@ -1,62 +1,61 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ClientService } from '../../services/client.service';
+import { SupplieService } from '../../services/supplie.service';
 import {NgForm} from '@angular/forms';
 import { ProviderAst } from '@angular/compiler';
-import { Client } from 'src/app/models/client';
+import { Supplie } from 'src/app/models/supplie';
 import * as jsPDF from 'jspdf';
 
 declare var M: any;
 @Component({
-  selector: 'app-clients',
-  templateUrl: './clients.component.html',
-  styleUrls: ['./clients.component.css'],
-  providers: [ClientService]
+  selector: 'app-supplies',
+  templateUrl: './supplies.component.html',
+  styleUrls: ['./supplies.component.css'],
+  providers: [SupplieService]
 })
-export class ClientsComponent implements OnInit {
+export class SuppliesComponent implements OnInit {
+constructor(private supplieService: SupplieService) { }
+ignore = false;
 
-  constructor(public clientService: ClientService) { }
-
-  ignore = false;
 
   ngOnInit() {
-    this.getClients();
+    this.getSupplies();
   }
-  addClient(form: NgForm){
+  addSupplie(form: NgForm){
     if(form.value._id) {
-      this.clientService.putClient(form.value)
+      this.supplieService.putSupplie(form.value)
       .subscribe(res =>{
         this.resetForm(form);
         M.toast({html: 'Updated Successfuly!'})     
-        this.getClients();
+        this.getSupplies();
       })
     }else{
-      this.clientService.postClient(form.value)
+      this.supplieService.postSupplie(form.value)
       .subscribe(res =>{
         this.resetForm(form);
         M.toast({html: 'Save Successfuly!'})     
-        this.getClients();
+        this.getSupplies();
       });  
     }
   }
 
-  getClients(){
-    this.clientService.getClients()
+  getSupplies(){
+    this.supplieService.getSupplies()
     .subscribe(res => {
-    this.clientService.clients = res as Client[];
+    this.supplieService.supplies = res as Supplie[];
     console.log(res);
     });
   }
 
-  editClient(client: Client){
-    this.clientService.selectedClient = client;
+  editSupplie(supplie: Supplie){
+    this.supplieService.selectedSupplie = supplie;
   }
 
-  deleteClient(_id: string){
+  deleteSupplie(_id: string){
     if(confirm('Are you sure you want to delete it?')) {
-      this.clientService.deleteClient(_id)
+      this.supplieService.deleteSupplie(_id)
       .subscribe(res => {
-        this.getClients();
+        this.getSupplies();
         M.toast({html: 'Deleted successfully'});
       });  
     }
@@ -65,17 +64,17 @@ export class ClientsComponent implements OnInit {
   resetForm(form?: NgForm ){
     if (form){
       form.reset();
-      this.clientService.selectedClient = new Client();
+      this.supplieService.selectedSupplie = new Supplie();
     }
   }
+
   generarPDF(){
-    var id = document.getElementById("tabMensaje");
+    var id = document.getElementById("tabsupplies");
     var pdf = new jsPDF({
       orientation: 'landscape',
       unit:'pt',
       format:'carta'
     });
-
       // Se asignan más propiedades al PDF
       pdf.setDrawColor("#444444");
       pdf.setFont("arial", "italic");
@@ -91,7 +90,7 @@ export class ClientsComponent implements OnInit {
       var img = new Image();
       img.src="/assets/img/logo2.png";
       pdf.addImage(img, 'png', 90, 65);
-      pdf.save("Productos.pdf");
+      pdf.save("Materia-Prima.pdf");
       pdf.line(600, 100, 200, 100);
       pdf.addPage('a3', 'portrait');
       this.ignore = false;

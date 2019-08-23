@@ -27,8 +27,8 @@ export class PublicidadService {
     this.selectedPublicidad = new Publicidad();
    }
 
-  get(){
-    return this.http.get(this.URL_API);
+  getPublicidad(){
+    return this.http.get(this.URL_API,);
   }
   post(publicidad, imgImage: File) : Observable<any> {
 
@@ -40,7 +40,7 @@ export class PublicidadService {
     return this.http.post(this.URL_API, datos);
   }
 
-  put(publicidad, imgImage: File) : Observable<any> {
+  putPublicidad(publicidad, imgImage: File) : Observable<any> {
 
     let datos = new FormData();
     datos.append("title", publicidad.title);
@@ -49,7 +49,7 @@ export class PublicidadService {
 
       return this.http.put(this.URL_API + `/${publicidad._id}`, datos);
   }
-  delete(_id: string){
+  deletePublicidad(_id: string){
     console.log(_id);
     return this.http.delete(this.URL_API + `/${_id}`);
   }

@@ -3,6 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../services/product.service';
 import {NgForm} from '@angular/forms';
 import { Product } from 'src/app/models/product';
+import * as jsPDF from 'jspdf';
+
+
 
 declare var M: any;
 @Component({

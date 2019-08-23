@@ -1,7 +1,7 @@
 <app-navcruds></app-navcruds>
 <div class="container">
   <div class="row">
-    <div class="col s5">
+    <div class="col s12">
       <div class="card">
         <div class="card-content">
           <form #serviceForm="ngForm" (ngSubmit)="add(serviceForm)">
@@ -20,7 +20,7 @@
               <div class="imput-field col s12">
                 <input type="text" name="precio" #precio="ngModel" 
                 [(ngModel)] = "serviceService.selectedService.precio"
-                placeholder="precio">
+                placeholder="Precio">
               </div>
               <div class="col-4">
                   <div class="input-field col s12">
@@ -40,7 +40,7 @@
         </div>
       </div>
     </div>
-    <div class="col s7">
+    <div class="col s12">
       <table>
         <thead>
           <th>Title</th>

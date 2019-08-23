@@ -14,7 +14,7 @@ declare var M: any;
 })
 export class UsersComponent implements OnInit {
 
-  constructor(public userService: UserService) { }
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
     this.getUsers();
