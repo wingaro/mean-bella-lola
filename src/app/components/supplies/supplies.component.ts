@@ -14,7 +14,7 @@ declare var M: any;
   providers: [SupplieService]
 })
 export class SuppliesComponent implements OnInit {
-constructor(private supplieService: SupplieService) { }
+constructor(public supplieService: SupplieService) { }
 ignore = false;
 
 
