@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../services/product.service';
 import {NgForm} from '@angular/forms';
 import { Product } from 'src/app/models/product';
-import * as jsPDF from 'jspdf';
 
 
 
@@ -17,7 +16,6 @@ declare var M: any;
 export class ProductsComponent implements OnInit {
 
   constructor(public productService: ProductService) { }
-  ignore = false;
   filename: File;
 
   ngOnInit() {
@@ -75,35 +73,4 @@ export class ProductsComponent implements OnInit {
       this.productService.selectedProduct = new Product();
     }
   }
-
-      generarPDF(){
-        var id = document.getElementById("tabproducts");
-        var pdf = new jsPDF({
-          orientation: 'landscape',
-          unit:'pt',
-          format:'carta'
-        });
-          // Se asignan más propiedades al PDF
-          pdf.setDrawColor("#444444");
-          pdf.setFont("arial", "italic");
-          pdf.setFontSize(25);    
-          pdf.text("Productos", 360, 30,{ align: "center", width: 500} )
-          pdf.setFontSize(13);    
-          pdf.text("La Bella Lola", 600, 85, {align: "left"})     
-          pdf.text("Dolores Hidalgo", 600, 105, { align: "left" })
-          pdf.fromHTML(id,165,150,{align: "center",width: 500} );     
-          pdf.setDrawColor(255, 0, 0);
-          pdf.line(750, 50, 100, 50);  
-          
-          var img = new Image();
-          img.src="/assets/img/logo2.png";
-          pdf.addImage(img, 'png', 90, 65);
-          pdf.save("Materia-Prima.pdf");
-          pdf.line(600, 100, 200, 100);
-          pdf.addPage('a3', 'portrait');
-          this.ignore = false;
-        
-        
-      }
-    
-    }
+}

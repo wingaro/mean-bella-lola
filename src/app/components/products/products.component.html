@@ -57,7 +57,7 @@
       </div>
     </div>
 
-    <div class="col s12" id="tabproducts">
+    <div class="col s12">
       <table>
         <thead>
           <th>Codigo</th>
@@ -65,12 +65,8 @@
           <th>Descripción</th>
           <th>Categoria</th>
           <th>Precio</th>
-          <div *ngIf="!ignore">
-              <th>Imagen</th>
-          </div>
-          <div *ngIf="!ignore">
-              <th>Operaciones</th>
-          </div>
+          <th>Imagen</th>
+          <th>Operaciones</th>
         </thead>
         <tbody>
           <tr *ngFor="let product of productService.products">
@@ -79,22 +75,17 @@
               <td> {{ product.descripcion }}</td>
               <td> {{ product.categoria }}</td>
               <td> {{ product.precio }}</td>
-              <div *ngIf="!ignore">
-                  <td><img width="50px" height="70px" src="/api/products/imagen/{{product.filename}}"alt=""></td> 
-              </div>
-              <div *ngIf="!ignore">
-                  <td>
-                      <a (click)="edit(product)">
-                        <i class="material-icons">edit</i>
-                      </a>
-                      <a (click)="delete(product._id)">
-                        <i class="material-icons">delete</i>
-                      </a>
-                  </td>
-              </div>  
+              <td><img width="50px" height="70px" src="/api/products/imagen/{{product.filename}}"alt=""></td> 
+              <td>
+                  <a (click)="edit(product)">
+                    <i class="material-icons">edit</i>
+                  </a>
+                  <a (click)="delete(product._id)">
+                    <i class="material-icons">delete</i>
+                  </a>
+              </td>  
           </tr>
         </tbody>
-        <button class="btn red" (click)="generarPDF()"> Generar PDF</button>
       </table>
     </div>
   </div>
